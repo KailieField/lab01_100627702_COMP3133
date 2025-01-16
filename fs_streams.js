@@ -2,6 +2,8 @@ const fs = require('fs')
 
 const zlib = require('zlib')
 
+const ToLowerCasePipe = require ('./word_split_pip')
+
 
 const readStream = fs.createReadStream('input_stream.txt')
 const writeStream = fs.createWriteStream('output_stream.txt')
@@ -32,3 +34,4 @@ writeStream.write("NodeJs")
 //pipes
 readStream.pipe(writeStream)
 readStream.pipe(zlib.createGzip()).pipe(fs.createWriteStream('stream.gz'))
+readStream.pipe( new ToLowerCasePipe()).pipe(fs.createWriteStream('lower_stream.txt'))
