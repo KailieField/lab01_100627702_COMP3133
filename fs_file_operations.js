@@ -14,4 +14,4 @@ fs.exists('output.txt', (flag) => {
     }else{
         console.log('No file to delete.')
     }
-} )
+})
