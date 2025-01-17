@@ -27,7 +27,7 @@ try {
     if (americanData.length > 0) {
 
         fs.writeFileSync('usa.txt', [header, ...americanData].join('\n'));
-        console.log('--- transribed to usa.txt');
+        console.log('--- transcribed to usa.txt');
     }
 
 } catch(err){
